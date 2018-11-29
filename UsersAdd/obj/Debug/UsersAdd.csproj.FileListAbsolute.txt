@@ -1,0 +1,9 @@
+C:\Users\mozgoed123\Documents\GitHub\UsersAdd\UsersAdd\bin\Debug\UsersAdd.exe
+C:\Users\mozgoed123\Documents\GitHub\UsersAdd\UsersAdd\bin\Debug\UsersAdd.pdb
+C:\Users\mozgoed123\Documents\GitHub\UsersAdd\UsersAdd\obj\Debug\UsersAdd.csprojAssemblyReference.cache
+C:\Users\mozgoed123\Documents\GitHub\UsersAdd\UsersAdd\obj\Debug\UsersAdd.Form1.resources
+C:\Users\mozgoed123\Documents\GitHub\UsersAdd\UsersAdd\obj\Debug\UsersAdd.Properties.Resources.resources
+C:\Users\mozgoed123\Documents\GitHub\UsersAdd\UsersAdd\obj\Debug\UsersAdd.csproj.GenerateResource.cache
+C:\Users\mozgoed123\Documents\GitHub\UsersAdd\UsersAdd\obj\Debug\UsersAdd.csproj.CoreCompileInputs.cache
+C:\Users\mozgoed123\Documents\GitHub\UsersAdd\UsersAdd\obj\Debug\UsersAdd.exe
+C:\Users\mozgoed123\Documents\GitHub\UsersAdd\UsersAdd\obj\Debug\UsersAdd.pdb
