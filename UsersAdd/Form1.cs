@@ -82,9 +82,10 @@ namespace UsersAdd
                     string familyName = ConvertWord2Translit(pieces[0]);
                     string name = ConvertWord2Translit(pieces[1]);
                     string profileName = familyName + "." + name;
-                    string result = string.Format("dsadd user \"cn={0}{1}\" -display \"{0}\" -samid {2} -upn {2} -profile \\\\inf0\\Prifiles$\\{2} -pwd {3} -ln {3} -reversiblepwd yes -mustchpwd yes",
-                                                    fullname, txtDepartments.Text, profileName, pieces[0]);
+                    string result = string.Format("dsadd user \"cn={0}{1}\" -display \"{0}\" -samid {2} -upn {2} -profile \\\\inf0\\Profiles$\\{2} -pwd {3} -reversiblepwd yes -mustchpwd yes",
+                                                    fullname, txtDepartments.Text, profileName, familyName);
                     if (chb_fn.Checked) result += " -fn " + pieces[1];
+                    if(chb_ln.Checked) result += " -ln " + pieces[0];
                     txtResult.Text += result;
                     txtResult.Text += "\r\n";
                 }
@@ -108,9 +109,10 @@ namespace UsersAdd
                     string familyName = ConvertWord2Translit(pieces[0]);
                     string name = ConvertWord2Translit(pieces[1]);
                     string profileName = familyName + "." + name;
-                    string result = string.Format("dsadd user \"cn={0}{1}\" -display \"{0}\" -samid {2} -upn {2} -profile \\\\inf0\\Prifiles$\\{2} -pwd {3} -ln {3} -reversiblepwd yes -mustchpwd yes",
-                                                    fullname, txtDepartments.Text, profileName, pieces[0]);
+                    string result = string.Format("dsadd user \"cn={0}{1}\" -display \"{0}\" -samid {2} -upn {2} -profile \\\\inf0\\Profiles$\\{2} -pwd {3} -reversiblepwd yes -mustchpwd yes",
+                                                    fullname, txtDepartments.Text, profileName, familyName);
                     if (chb_fn.Checked) result += " -fn " + pieces[1];
+                    if (chb_ln.Checked) result += " -ln " + pieces[0];
                     txtResult.Text += result;
                     txtResult.Text += "\r\n";
                     fullname = read.ReadLine();

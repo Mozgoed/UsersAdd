@@ -41,22 +41,21 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtResult = new System.Windows.Forms.TextBox();
             this.chb_fn = new System.Windows.Forms.CheckBox();
+            this.chb_ln = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // txtFile
             // 
-            this.txtFile.Location = new System.Drawing.Point(138, 15);
-            this.txtFile.Margin = new System.Windows.Forms.Padding(2);
+            this.txtFile.Location = new System.Drawing.Point(207, 23);
             this.txtFile.Name = "txtFile";
-            this.txtFile.Size = new System.Drawing.Size(201, 20);
+            this.txtFile.Size = new System.Drawing.Size(300, 26);
             this.txtFile.TabIndex = 1;
             // 
             // btnBrowse
             // 
-            this.btnBrowse.Location = new System.Drawing.Point(342, 13);
-            this.btnBrowse.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBrowse.Location = new System.Drawing.Point(513, 20);
             this.btnBrowse.Name = "btnBrowse";
-            this.btnBrowse.Size = new System.Drawing.Size(57, 21);
+            this.btnBrowse.Size = new System.Drawing.Size(86, 32);
             this.btnBrowse.TabIndex = 2;
             this.btnBrowse.Text = "Обзор";
             this.btnBrowse.UseVisualStyleBackColor = true;
@@ -65,10 +64,9 @@
             // radFile
             // 
             this.radFile.AutoSize = true;
-            this.radFile.Location = new System.Drawing.Point(8, 16);
-            this.radFile.Margin = new System.Windows.Forms.Padding(2);
+            this.radFile.Location = new System.Drawing.Point(12, 25);
             this.radFile.Name = "radFile";
-            this.radFile.Size = new System.Drawing.Size(127, 17);
+            this.radFile.Size = new System.Drawing.Size(189, 24);
             this.radFile.TabIndex = 3;
             this.radFile.Text = "Загрузить из файла";
             this.radFile.UseVisualStyleBackColor = true;
@@ -77,10 +75,9 @@
             // 
             this.radText.AutoSize = true;
             this.radText.Checked = true;
-            this.radText.Location = new System.Drawing.Point(8, 35);
-            this.radText.Margin = new System.Windows.Forms.Padding(2);
+            this.radText.Location = new System.Drawing.Point(12, 54);
             this.radText.Name = "radText";
-            this.radText.Size = new System.Drawing.Size(179, 17);
+            this.radText.Size = new System.Drawing.Size(262, 24);
             this.radText.TabIndex = 4;
             this.radText.TabStop = true;
             this.radText.Text = "Загрузить из текстового окна";
@@ -88,21 +85,19 @@
             // 
             // txtUsers
             // 
-            this.txtUsers.Location = new System.Drawing.Point(8, 55);
-            this.txtUsers.Margin = new System.Windows.Forms.Padding(2);
+            this.txtUsers.Location = new System.Drawing.Point(12, 85);
             this.txtUsers.Multiline = true;
             this.txtUsers.Name = "txtUsers";
             this.txtUsers.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtUsers.Size = new System.Drawing.Size(393, 97);
+            this.txtUsers.Size = new System.Drawing.Size(588, 147);
             this.txtUsers.TabIndex = 5;
             // 
             // btnCreateFile
             // 
             this.btnCreateFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCreateFile.Location = new System.Drawing.Point(262, 196);
-            this.btnCreateFile.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCreateFile.Location = new System.Drawing.Point(393, 302);
             this.btnCreateFile.Name = "btnCreateFile";
-            this.btnCreateFile.Size = new System.Drawing.Size(137, 21);
+            this.btnCreateFile.Size = new System.Drawing.Size(206, 32);
             this.btnCreateFile.TabIndex = 6;
             this.btnCreateFile.Text = "Записать в файл";
             this.btnCreateFile.UseVisualStyleBackColor = true;
@@ -111,10 +106,9 @@
             // btnGenerate
             // 
             this.btnGenerate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnGenerate.Location = new System.Drawing.Point(8, 196);
-            this.btnGenerate.Margin = new System.Windows.Forms.Padding(2);
+            this.btnGenerate.Location = new System.Drawing.Point(12, 302);
             this.btnGenerate.Name = "btnGenerate";
-            this.btnGenerate.Size = new System.Drawing.Size(99, 21);
+            this.btnGenerate.Size = new System.Drawing.Size(148, 32);
             this.btnGenerate.TabIndex = 7;
             this.btnGenerate.Text = "Сгенерировать";
             this.btnGenerate.UseVisualStyleBackColor = true;
@@ -123,10 +117,9 @@
             // btnCopy
             // 
             this.btnCopy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCopy.Location = new System.Drawing.Point(159, 196);
-            this.btnCopy.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCopy.Location = new System.Drawing.Point(238, 302);
             this.btnCopy.Name = "btnCopy";
-            this.btnCopy.Size = new System.Drawing.Size(99, 21);
+            this.btnCopy.Size = new System.Drawing.Size(148, 32);
             this.btnCopy.TabIndex = 8;
             this.btnCopy.Text = "Скопировать";
             this.btnCopy.UseVisualStyleBackColor = true;
@@ -140,20 +133,18 @@
             // 
             // txtDepartments
             // 
-            this.txtDepartments.Location = new System.Drawing.Point(101, 156);
-            this.txtDepartments.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDepartments.Location = new System.Drawing.Point(152, 240);
             this.txtDepartments.Name = "txtDepartments";
-            this.txtDepartments.Size = new System.Drawing.Size(300, 20);
+            this.txtDepartments.Size = new System.Drawing.Size(448, 26);
             this.txtDepartments.TabIndex = 9;
             this.txtDepartments.Text = "OU=А,OU=8 класс,OU=Ученики,DC=informatics,DC=school272";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 158);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(12, 243);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 13);
+            this.label1.Size = new System.Drawing.Size(133, 20);
             this.label1.TabIndex = 10;
             this.label1.Text = "Подразделения";
             // 
@@ -161,29 +152,41 @@
             // 
             this.txtResult.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtResult.Location = new System.Drawing.Point(8, 221);
-            this.txtResult.Margin = new System.Windows.Forms.Padding(2);
+            this.txtResult.Location = new System.Drawing.Point(12, 340);
             this.txtResult.Multiline = true;
             this.txtResult.Name = "txtResult";
             this.txtResult.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtResult.Size = new System.Drawing.Size(393, 97);
+            this.txtResult.Size = new System.Drawing.Size(588, 147);
             this.txtResult.TabIndex = 11;
             // 
             // chb_fn
             // 
             this.chb_fn.AutoSize = true;
-            this.chb_fn.Location = new System.Drawing.Point(13, 175);
+            this.chb_fn.Location = new System.Drawing.Point(20, 269);
+            this.chb_fn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.chb_fn.Name = "chb_fn";
-            this.chb_fn.Size = new System.Drawing.Size(70, 17);
+            this.chb_fn.Size = new System.Drawing.Size(99, 24);
             this.chb_fn.TabIndex = 12;
             this.chb_fn.Text = "- fn [имя]";
             this.chb_fn.UseVisualStyleBackColor = true;
             // 
+            // chb_ln
+            // 
+            this.chb_ln.AutoSize = true;
+            this.chb_ln.Location = new System.Drawing.Point(127, 269);
+            this.chb_ln.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.chb_ln.Name = "chb_ln";
+            this.chb_ln.Size = new System.Drawing.Size(140, 24);
+            this.chb_ln.TabIndex = 13;
+            this.chb_ln.Text = "- ln [фамилия]";
+            this.chb_ln.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(407, 325);
+            this.ClientSize = new System.Drawing.Size(610, 500);
+            this.Controls.Add(this.chb_ln);
             this.Controls.Add(this.chb_fn);
             this.Controls.Add(this.txtResult);
             this.Controls.Add(this.label1);
@@ -197,7 +200,6 @@
             this.Controls.Add(this.btnBrowse);
             this.Controls.Add(this.txtFile);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "UsersAdd .Net by Mozgoed";
             this.ResumeLayout(false);
@@ -220,6 +222,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtResult;
         private System.Windows.Forms.CheckBox chb_fn;
+        private System.Windows.Forms.CheckBox chb_ln;
     }
 }
 
