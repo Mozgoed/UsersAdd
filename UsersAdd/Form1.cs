@@ -35,7 +35,7 @@ namespace UsersAdd
             rus[4] = "д"; eng[4] = "d";
             rus[5] = "е"; eng[5] = "e";
             rus[6] = "ё"; eng[6] = "yo";
-            rus[7] = "ж"; eng[7] = "g";
+            rus[7] = "ж"; eng[7] = "j";
             rus[8] = "з"; eng[8] = "z";
             rus[9] = "и"; eng[9] = "i";
             rus[10] = "й"; eng[10] = "y";
@@ -70,21 +70,30 @@ namespace UsersAdd
         {
             if (radText.Checked)
             {
-                char[] splitchar = { ' ' };
+                string[] splitchar = { "\n" };
                 foreach (string s in txtUsers.Text.Split(splitchar,StringSplitOptions.RemoveEmptyEntries))
                 {
-
+                    string[] separator = { " " };
+                    string fullname = s.Trim();
+                    if (fullname == "") { continue; }
+                    string[] pieces = fullname.Split(separator, StringSplitOptions.RemoveEmptyEntries);
+                    fullname = pieces[0] + " " + pieces[1];
+                    string familyName = ConvertWord2Translit(pieces[0]);
+                    string name = ConvertWord2Translit(pieces[1]);
+                    string profileName = familyName + "." + name;
+                    txtResult.Text+=string.Format("dssadd user \"cn={0}{1}\" -display \"{0}\" -samid {2} -upn {2} -profile \\\\inf0\\Prifiles$\\{2} -pwd {3} -ln {3} -fn {4} -rewersiblepwd yes -mustchpwd yes",
+                                                    fullname, txtDepartments.Text, profileName, familyName, name);
+                    txtResult.Text += "\r\n";
                 }
             }
             if (radFile.Checked)
             {
-                if(!System.IO.File.Exists(txtFile.Text))
+                if (!System.IO.File.Exists(txtFile.Text))
                 {
                     MessageBox.Show("Файл не найден");
                     return;
                 }
                 System.IO.StreamReader read = new System.IO.StreamReader(txtFile.Text);
-                System.IO.StreamWriter write = new System.IO.StreamWriter("users.bat", true, Encoding.GetEncoding(866));
                 string fullname = read.ReadLine();
                 while (fullname != null)
                 {
@@ -94,17 +103,17 @@ namespace UsersAdd
                     string[] pieces = fullname.Split(separator, StringSplitOptions.RemoveEmptyEntries);
                     fullname = pieces[0] + " " + pieces[1];
                     Console.WriteLine(fullname);
-                    string firstName = ConvertWord2Translit(pieces[0]);
-                    string lastName = ConvertWord2Translit(pieces[1]);
-                    string profileName = firstName + "." + lastName;
+                    string familyName = ConvertWord2Translit(pieces[0]);
+                    string name = ConvertWord2Translit(pieces[1]);
+                    string profileName = familyName + "." + name;
                     Console.WriteLine(profileName);
                     Console.WriteLine();
-                    write.WriteLine("dssadd user \"cn={0}{1}\" -display \"{0}\" -samid {2} -upn {2} -profile \\\\inf0\\Prifiles$\\{2} -pwd {3} -ln {3} -fn {4} -rewersiblepwn yes -mustchpwd yes",
-                                                    fullname,txtDepartments,profileName,lastName,firstName);
+                    txtResult.Text += string.Format("dssadd user \"cn={0}{1}\" -display \"{0}\" -samid {2} -upn {2} -profile \\\\inf0\\Prifiles$\\{2} -pwd {3} -ln {3} -fn {4} -rewersiblepwd yes -mustchpwd yes",
+                                                    fullname, txtDepartments.Text, profileName, familyName, name);
+                    txtResult.Text += "\r\n";
                     fullname = read.ReadLine();
                     System.Threading.Thread.Sleep(200);
                 }
-                write.Flush(); write.Close();
                 read.Close();
             }
         }
@@ -119,7 +128,19 @@ namespace UsersAdd
 
         private void btnCopy_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(result);
+            Clipboard.SetText(txtResult.Text);
+        }
+
+        private void btnCreateFile_Click(object sender, EventArgs e)
+        {
+            System.IO.StreamWriter write = new System.IO.StreamWriter("users.bat", true, Encoding.GetEncoding(866));
+            char[] splitchar = { '\n' };
+            foreach (string s in txtResult.Text.Split(splitchar, StringSplitOptions.RemoveEmptyEntries))
+            {
+                write.WriteLine(s.Trim());
+                System.Threading.Thread.Sleep(200);
+            }
+            write.Flush(); write.Close();
         }
     }
 }

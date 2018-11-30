@@ -7,3 +7,12 @@ C:\Users\mozgoed123\Documents\GitHub\UsersAdd\UsersAdd\obj\Debug\UsersAdd.csproj
 C:\Users\mozgoed123\Documents\GitHub\UsersAdd\UsersAdd\obj\Debug\UsersAdd.csproj.CoreCompileInputs.cache
 C:\Users\mozgoed123\Documents\GitHub\UsersAdd\UsersAdd\obj\Debug\UsersAdd.exe
 C:\Users\mozgoed123\Documents\GitHub\UsersAdd\UsersAdd\obj\Debug\UsersAdd.pdb
+G:\github\UsersAdd\UsersAdd\obj\Debug\UsersAdd.csprojResolveAssemblyReference.cache
+G:\github\UsersAdd\UsersAdd\obj\Debug\UsersAdd.Form1.resources
+G:\github\UsersAdd\UsersAdd\obj\Debug\UsersAdd.Properties.Resources.resources
+G:\github\UsersAdd\UsersAdd\obj\Debug\UsersAdd.csproj.GenerateResource.cache
+G:\github\UsersAdd\UsersAdd\obj\Debug\UsersAdd.csproj.CoreCompileInputs.cache
+G:\github\UsersAdd\UsersAdd\obj\Debug\UsersAdd.exe
+G:\github\UsersAdd\UsersAdd\obj\Debug\UsersAdd.pdb
+G:\github\UsersAdd\UsersAdd\bin\Debug\UsersAdd.exe
+G:\github\UsersAdd\UsersAdd\bin\Debug\UsersAdd.pdb
