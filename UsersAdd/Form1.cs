@@ -65,9 +65,10 @@ namespace UsersAdd
                 if (rus[n][0] == c) return eng[n];
             return c.ToString();
         }
-        string result = string.Empty;
+        
         private void btnGenerate_Click(object sender, EventArgs e)
         {
+            txtResult.Text = string.Empty;
             if (radText.Checked)
             {
                 string[] splitchar = { "\n" };
@@ -81,8 +82,10 @@ namespace UsersAdd
                     string familyName = ConvertWord2Translit(pieces[0]);
                     string name = ConvertWord2Translit(pieces[1]);
                     string profileName = familyName + "." + name;
-                    txtResult.Text+=string.Format("dssadd user \"cn={0}{1}\" -display \"{0}\" -samid {2} -upn {2} -profile \\\\inf0\\Prifiles$\\{2} -pwd {3} -ln {3} -fn {4} -rewersiblepwd yes -mustchpwd yes",
-                                                    fullname, txtDepartments.Text, profileName, familyName, name);
+                    string result = string.Format("dsadd user \"cn={0}{1}\" -display \"{0}\" -samid {2} -upn {2} -profile \\\\inf0\\Prifiles$\\{2} -pwd {3} -ln {3} -reversiblepwd yes -mustchpwd yes",
+                                                    fullname, txtDepartments.Text, profileName, pieces[0]);
+                    if (chb_fn.Checked) result += " -fn " + pieces[1];
+                    txtResult.Text += result;
                     txtResult.Text += "\r\n";
                 }
             }
@@ -102,14 +105,13 @@ namespace UsersAdd
                     if (fullname == "") { fullname = read.ReadLine(); continue; }
                     string[] pieces = fullname.Split(separator, StringSplitOptions.RemoveEmptyEntries);
                     fullname = pieces[0] + " " + pieces[1];
-                    Console.WriteLine(fullname);
                     string familyName = ConvertWord2Translit(pieces[0]);
                     string name = ConvertWord2Translit(pieces[1]);
                     string profileName = familyName + "." + name;
-                    Console.WriteLine(profileName);
-                    Console.WriteLine();
-                    txtResult.Text += string.Format("dssadd user \"cn={0}{1}\" -display \"{0}\" -samid {2} -upn {2} -profile \\\\inf0\\Prifiles$\\{2} -pwd {3} -ln {3} -fn {4} -rewersiblepwd yes -mustchpwd yes",
-                                                    fullname, txtDepartments.Text, profileName, familyName, name);
+                    string result = string.Format("dsadd user \"cn={0}{1}\" -display \"{0}\" -samid {2} -upn {2} -profile \\\\inf0\\Prifiles$\\{2} -pwd {3} -ln {3} -reversiblepwd yes -mustchpwd yes",
+                                                    fullname, txtDepartments.Text, profileName, pieces[0]);
+                    if (chb_fn.Checked) result += " -fn " + pieces[1];
+                    txtResult.Text += result;
                     txtResult.Text += "\r\n";
                     fullname = read.ReadLine();
                     System.Threading.Thread.Sleep(200);
