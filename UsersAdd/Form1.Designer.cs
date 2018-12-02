@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.txtFile = new System.Windows.Forms.TextBox();
             this.btnBrowse = new System.Windows.Forms.Button();
             this.radFile = new System.Windows.Forms.RadioButton();
@@ -268,6 +269,7 @@
             this.Controls.Add(this.radFile);
             this.Controls.Add(this.btnBrowse);
             this.Controls.Add(this.txtFile);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MinimumSize = new System.Drawing.Size(423, 395);
             this.Name = "Form1";
