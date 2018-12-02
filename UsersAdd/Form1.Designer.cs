@@ -47,6 +47,8 @@
             this.chb_reversiblepwd = new System.Windows.Forms.CheckBox();
             this.lblProfile = new System.Windows.Forms.Label();
             this.txtProfile = new System.Windows.Forms.TextBox();
+            this.chbAdd = new System.Windows.Forms.CheckBox();
+            this.chbAutoClear = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // txtFile
@@ -56,8 +58,8 @@
             this.txtFile.Location = new System.Drawing.Point(138, 15);
             this.txtFile.Margin = new System.Windows.Forms.Padding(2);
             this.txtFile.Name = "txtFile";
-            this.txtFile.Size = new System.Drawing.Size(201, 21);
-            this.txtFile.TabIndex = 1;
+            this.txtFile.Size = new System.Drawing.Size(201, 20);
+            this.txtFile.TabIndex = 2;
             // 
             // btnBrowse
             // 
@@ -77,7 +79,7 @@
             this.radFile.Location = new System.Drawing.Point(8, 16);
             this.radFile.Margin = new System.Windows.Forms.Padding(2);
             this.radFile.Name = "radFile";
-            this.radFile.Size = new System.Drawing.Size(126, 17);
+            this.radFile.Size = new System.Drawing.Size(127, 17);
             this.radFile.TabIndex = 3;
             this.radFile.Text = "Загрузить из файла";
             this.radFile.UseVisualStyleBackColor = true;
@@ -105,15 +107,15 @@
             this.txtUsers.Name = "txtUsers";
             this.txtUsers.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtUsers.Size = new System.Drawing.Size(393, 97);
-            this.txtUsers.TabIndex = 5;
+            this.txtUsers.TabIndex = 1;
             // 
             // btnCreateFile
             // 
             this.btnCreateFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCreateFile.Location = new System.Drawing.Point(262, 229);
+            this.btnCreateFile.Location = new System.Drawing.Point(296, 229);
             this.btnCreateFile.Margin = new System.Windows.Forms.Padding(2);
             this.btnCreateFile.Name = "btnCreateFile";
-            this.btnCreateFile.Size = new System.Drawing.Size(137, 21);
+            this.btnCreateFile.Size = new System.Drawing.Size(103, 21);
             this.btnCreateFile.TabIndex = 6;
             this.btnCreateFile.Text = "Записать в файл";
             this.btnCreateFile.UseVisualStyleBackColor = true;
@@ -133,10 +135,10 @@
             // btnCopy
             // 
             this.btnCopy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCopy.Location = new System.Drawing.Point(159, 229);
+            this.btnCopy.Location = new System.Drawing.Point(202, 229);
             this.btnCopy.Margin = new System.Windows.Forms.Padding(2);
             this.btnCopy.Name = "btnCopy";
-            this.btnCopy.Size = new System.Drawing.Size(99, 21);
+            this.btnCopy.Size = new System.Drawing.Size(90, 21);
             this.btnCopy.TabIndex = 8;
             this.btnCopy.Text = "Скопировать";
             this.btnCopy.UseVisualStyleBackColor = true;
@@ -155,8 +157,8 @@
             this.txtDepartments.Location = new System.Drawing.Point(101, 156);
             this.txtDepartments.Margin = new System.Windows.Forms.Padding(2);
             this.txtDepartments.Name = "txtDepartments";
-            this.txtDepartments.Size = new System.Drawing.Size(300, 21);
-            this.txtDepartments.TabIndex = 9;
+            this.txtDepartments.Size = new System.Drawing.Size(300, 20);
+            this.txtDepartments.TabIndex = 3;
             this.txtDepartments.Text = ",OU=А,OU=8 класс,OU=Ученики,DC=informatics,DC=school272";
             // 
             // label1
@@ -179,7 +181,7 @@
             this.txtResult.Multiline = true;
             this.txtResult.Name = "txtResult";
             this.txtResult.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtResult.Size = new System.Drawing.Size(393, 97);
+            this.txtResult.Size = new System.Drawing.Size(393, 94);
             this.txtResult.TabIndex = 11;
             // 
             // chb_fn
@@ -187,7 +189,7 @@
             this.chb_fn.AutoSize = true;
             this.chb_fn.Location = new System.Drawing.Point(12, 207);
             this.chb_fn.Name = "chb_fn";
-            this.chb_fn.Size = new System.Drawing.Size(72, 17);
+            this.chb_fn.Size = new System.Drawing.Size(70, 17);
             this.chb_fn.TabIndex = 12;
             this.chb_fn.Text = "- fn [имя]";
             this.chb_fn.UseVisualStyleBackColor = true;
@@ -197,7 +199,7 @@
             this.chb_ln.AutoSize = true;
             this.chb_ln.Location = new System.Drawing.Point(81, 207);
             this.chb_ln.Name = "chb_ln";
-            this.chb_ln.Size = new System.Drawing.Size(96, 17);
+            this.chb_ln.Size = new System.Drawing.Size(95, 17);
             this.chb_ln.TabIndex = 13;
             this.chb_ln.Text = "- ln [фамилия]";
             this.chb_ln.UseVisualStyleBackColor = true;
@@ -209,7 +211,7 @@
             this.chb_mustchpwd.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chb_mustchpwd.Location = new System.Drawing.Point(174, 207);
             this.chb_mustchpwd.Name = "chb_mustchpwd";
-            this.chb_mustchpwd.Size = new System.Drawing.Size(104, 17);
+            this.chb_mustchpwd.Size = new System.Drawing.Size(102, 17);
             this.chb_mustchpwd.TabIndex = 14;
             this.chb_mustchpwd.Text = "-mustchpwd yes";
             this.chb_mustchpwd.UseVisualStyleBackColor = true;
@@ -221,7 +223,7 @@
             this.chb_reversiblepwd.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chb_reversiblepwd.Location = new System.Drawing.Point(284, 207);
             this.chb_reversiblepwd.Name = "chb_reversiblepwd";
-            this.chb_reversiblepwd.Size = new System.Drawing.Size(117, 17);
+            this.chb_reversiblepwd.Size = new System.Drawing.Size(113, 17);
             this.chb_reversiblepwd.TabIndex = 15;
             this.chb_reversiblepwd.Text = "-reversiblepwd yes";
             this.chb_reversiblepwd.UseVisualStyleBackColor = true;
@@ -232,7 +234,7 @@
             this.lblProfile.Location = new System.Drawing.Point(8, 183);
             this.lblProfile.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblProfile.Name = "lblProfile";
-            this.lblProfile.Size = new System.Drawing.Size(44, 13);
+            this.lblProfile.Size = new System.Drawing.Size(41, 13);
             this.lblProfile.TabIndex = 17;
             this.lblProfile.Text = "- profile";
             // 
@@ -243,15 +245,41 @@
             this.txtProfile.Location = new System.Drawing.Point(56, 181);
             this.txtProfile.Margin = new System.Windows.Forms.Padding(2);
             this.txtProfile.Name = "txtProfile";
-            this.txtProfile.Size = new System.Drawing.Size(345, 21);
+            this.txtProfile.Size = new System.Drawing.Size(345, 20);
             this.txtProfile.TabIndex = 16;
             this.txtProfile.Text = "\\\\inf0\\Profiles$\\";
+            // 
+            // chbAdd
+            // 
+            this.chbAdd.AutoSize = true;
+            this.chbAdd.Checked = true;
+            this.chbAdd.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chbAdd.Location = new System.Drawing.Point(112, 232);
+            this.chbAdd.Name = "chbAdd";
+            this.chbAdd.Size = new System.Drawing.Size(76, 17);
+            this.chbAdd.TabIndex = 18;
+            this.chbAdd.Text = "Добавить";
+            this.chbAdd.UseVisualStyleBackColor = true;
+            // 
+            // chbAutoClear
+            // 
+            this.chbAutoClear.AutoSize = true;
+            this.chbAutoClear.Checked = true;
+            this.chbAutoClear.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chbAutoClear.Location = new System.Drawing.Point(192, 36);
+            this.chbAutoClear.Name = "chbAutoClear";
+            this.chbAutoClear.Size = new System.Drawing.Size(216, 17);
+            this.chbAutoClear.TabIndex = 19;
+            this.chbAutoClear.Text = "Автоочистка поля + оставить ошибки";
+            this.chbAutoClear.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(407, 360);
+            this.ClientSize = new System.Drawing.Size(407, 357);
+            this.Controls.Add(this.chbAutoClear);
+            this.Controls.Add(this.chbAdd);
             this.Controls.Add(this.lblProfile);
             this.Controls.Add(this.txtProfile);
             this.Controls.Add(this.chb_reversiblepwd);
@@ -300,6 +328,8 @@
         private System.Windows.Forms.CheckBox chb_reversiblepwd;
         private System.Windows.Forms.Label lblProfile;
         private System.Windows.Forms.TextBox txtProfile;
+        private System.Windows.Forms.CheckBox chbAdd;
+        private System.Windows.Forms.CheckBox chbAutoClear;
     }
 }
 

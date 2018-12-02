@@ -68,7 +68,8 @@ namespace UsersAdd
         
         private void btnGenerate_Click(object sender, EventArgs e)
         {
-            txtResult.Text = string.Empty;
+            Queue<string> failProfiles = new Queue<string>();
+            if(!chbAdd.Checked) txtResult.Text = string.Empty;
             if (radText.Checked)
             {
                 string[] splitchar = { "\n" };
@@ -82,6 +83,11 @@ namespace UsersAdd
                     string familyName = ConvertWord2Translit(pieces[0]);
                     string name = ConvertWord2Translit(pieces[1]);
                     string profileName = familyName + "." + name;
+                    if(profileName.Length > 20)
+                    {
+                        failProfiles.Enqueue(fullname);
+                        continue;
+                    }
                     string result = string.Format("dsadd user \"cn={0}{1}\" -display \"{0}\" -samid {2} -upn {2} -pwd {3}",
                                                     fullname, txtDepartments.Text, profileName, familyName);
                     if (chb_fn.Checked) result += " -fn " + pieces[1];
@@ -112,6 +118,11 @@ namespace UsersAdd
                     string familyName = ConvertWord2Translit(pieces[0]);
                     string name = ConvertWord2Translit(pieces[1]);
                     string profileName = familyName + "." + name;
+                    if (profileName.Length > 20)
+                    {
+                        failProfiles.Enqueue(fullname);
+                        continue;
+                    }
                     string result = string.Format("dsadd user \"cn={0}{1}\" -display \"{0}\" -samid {2} -upn {2} -profile \\\\inf0\\Profiles$\\{2} -pwd {3}",
                                                     fullname, txtDepartments.Text, profileName, familyName);
                     if (chb_fn.Checked) result += " -fn " + pieces[1];
@@ -125,6 +136,12 @@ namespace UsersAdd
                     System.Threading.Thread.Sleep(200);
                 }
                 read.Close();
+            }
+            if(chbAutoClear.Checked)
+            {
+                txtUsers.Text = string.Empty;
+                foreach (string profilename in failProfiles)
+                    txtUsers.Text += profilename + "\r\n";
             }
         }
 
